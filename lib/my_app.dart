@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
         textTheme: GoogleFonts.robotoTextTheme().copyWith(
-          titleMedium: GoogleFonts.acme(fontSize: 20, fontWeight: FontWeight.bold),
-          bodyMedium: GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold),
+          titleLarge: GoogleFonts.roboto(fontSize: 26, fontWeight: FontWeight.w700),
+          titleMedium: GoogleFonts.roboto(fontSize: 14, fontWeight: FontWeight.w500),
+          bodyMedium: GoogleFonts.roboto(),
+          bodySmall: GoogleFonts.roboto(fontSize: 20,),
         ),
       ),
     );
