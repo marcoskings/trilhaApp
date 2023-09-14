@@ -40,8 +40,9 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(
             height: 10,
           ),
-          Text("Faça seu login e make the change_",
-          style: Theme.of(context).textTheme.titleMedium,
+          Text(
+            "Faça seu login e make the change_",
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(
             height: 50,
@@ -109,11 +110,25 @@ class _LoginPageState extends State<LoginPage> {
               horizontal: 30,
             ),
             alignment: Alignment.center,
-            color: Color.fromARGB(255, 143, 70, 185),
             height: 30,
-            child: const Text(
-              "Login",
-              style: TextStyle(color: Colors.white),
+            child: SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor:
+                      const MaterialStatePropertyAll(Colors.purple),
+                  shape: MaterialStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ),
+                child: const Text(
+                  "Entrar",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ),
           Expanded(
