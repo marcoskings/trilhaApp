@@ -8,8 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String email = "";
-  String senha = "";
+  final _emailContoller = TextEditingController(text: "");
+  final _senhaController = TextEditingController(text: "");
   bool isObscureText = true;
   @override
   Widget build(BuildContext context) {
@@ -63,8 +63,9 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
+                  controller: _emailContoller,
                   onChanged: (value) {
-                    email = value;
+                    
                   },
                   style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
@@ -96,9 +97,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 height: 30,
                 child: TextField(
+                  controller: _senhaController,
                   obscureText: isObscureText,
                   onChanged: (value) {
-                    senha = value;
+                  
                   },
                   style: const TextStyle(color: Colors.white),
                   decoration:  InputDecoration(
@@ -145,8 +147,8 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      debugPrint(email);
-                      debugPrint(senha);
+                      debugPrint(_emailContoller.text);
+                      debugPrint(_senhaController.text);
                     },
                     style: ButtonStyle(
                       backgroundColor:
