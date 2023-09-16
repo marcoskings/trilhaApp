@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Ja tem cadastro?",
-                style: Theme.of(context).textTheme.titleLarge,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(
                 height: 10,
