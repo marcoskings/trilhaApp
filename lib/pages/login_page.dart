@@ -8,7 +8,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _emailContoller = TextEditingController(text: "");
+  final _emailController = TextEditingController(text: "");
   final _senhaController = TextEditingController(text: "");
   bool isObscureText = true;
   @override
@@ -63,10 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
-                  controller: _emailContoller,
-                  onChanged: (value) {
-                    
-                  },
+                  controller: _emailController,
+                  onChanged: (value) {},
                   style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 0),
@@ -99,11 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextField(
                   controller: _senhaController,
                   obscureText: isObscureText,
-                  onChanged: (value) {
-                  
-                  },
+                  onChanged: (value) {},
                   style: const TextStyle(color: Colors.white),
-                  decoration:  InputDecoration(
+                  decoration: InputDecoration(
                     contentPadding: const EdgeInsets.only(top: 0),
                     enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
@@ -147,8 +143,20 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      debugPrint(_emailContoller.text);
-                      debugPrint(_senhaController.text);
+                      if (_emailController.text.trim() == "email@email" &&
+                          _senhaController.text.trim() == "123") {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Login efetuado com sucesso"),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Erro no login"),
+                          ),
+                        );
+                      }
                     },
                     style: ButtonStyle(
                       backgroundColor:
