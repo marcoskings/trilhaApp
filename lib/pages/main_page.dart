@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trilhaapp/pages/dados_cadastrais.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,7 +17,7 @@ class _MainPageState extends State<MainPage> {
       ),
       drawer: Drawer(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -24,36 +25,43 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   InkWell(
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child: Text("Dados Cadastrais"),
+                      child: const Text("Dados Cadastrais"),
                     ),
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DadosCadastraisPage(),
+                        ),
+                      );
+                    },
                   ),
-                  Divider(),
-                  SizedBox(
+                  const Divider(),
+                  const SizedBox(
                     height: 10,
                   ),
                 ],
               ),
-              
               InkWell(
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   width: double.infinity,
-                  child: Text("Temos de usuário e privacidade"),
+                  child: const Text("Temos de usuário e privacidade"),
                 ),
                 onTap: () {},
               ),
-              Divider(),
-              SizedBox(
+              const Divider(),
+              const SizedBox(
                 height: 10,
               ),
               InkWell(
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   width: double.infinity,
-                  child: Text("Configurações"),
+                  child: const Text("Configurações"),
                 ),
                 onTap: () {},
               ),
