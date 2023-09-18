@@ -26,29 +26,25 @@ class _MainPageState extends State<MainPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  InkWell(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      width: double.infinity,
-                      child: const Text("Dados Cadastrais"),
+              InkWell(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  width: double.infinity,
+                  child: const Text("Dados Cadastrais"),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DadosCadastraisPage(),
                     ),
-                    onTap: () {
-                      Navigator.pop(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DadosCadastraisPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
+                  );
+                },
+              ),
+              const Divider(),
+              const SizedBox(
+                height: 10,
               ),
               InkWell(
                 child: Container(
