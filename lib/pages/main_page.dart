@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trilhaapp/pages/dados_cadastrais.dart';
+import 'package:trilhaapp/pages/pagina1.dart';
+import 'package:trilhaapp/pages/pagina2.dart';
+import 'package:trilhaapp/pages/pagina3.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -69,8 +72,12 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text("Login efetuado"),
+      body:  PageView(
+        children: const [
+          Pagina1(),
+          Pagina2(),
+          Pagina3(),
+        ],
       ),
     );
   }
